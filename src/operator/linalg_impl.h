@@ -165,6 +165,26 @@ void linalg_gemm<cpu, mshadow::half::half_t>(const Tensor<cpu, 2, mshadow::half:
   LOG(FATAL) << "FP16 gemm on cpu not implemented!";
 }
 
+template<> inline
+void linalg_batch_gemm<cpu, mshadow::half::half_t>(const Tensor<cpu, 4, mshadow::half::half_t>& A,
+                                             const Tensor<cpu, 4, mshadow::half::half_t>& B,
+                                             const Tensor<cpu, 4, mshadow::half::half_t>& C,
+                                             mshadow::half::half_t alpha,
+                                             mshadow::half::half_t beta,
+                                             bool tA, bool tB, Stream<cpu> *s) {
+  LOG(FATAL) << "FP16 gemm on cpu not implemented!";
+}
+
+template<> inline
+void linalg_batch_gemm<cpu, mshadow::half::half_t>(const Tensor<cpu, 3, mshadow::half::half_t>& A,
+                                             const Tensor<cpu, 3, mshadow::half::half_t>& B,
+                                             const Tensor<cpu, 3, mshadow::half::half_t>& C,
+                                             mshadow::half::half_t alpha,
+                                             mshadow::half::half_t beta,
+                                             bool tA, bool tB, Stream<cpu> *s) {
+  LOG(FATAL) << "FP16 gemm on cpu not implemented!";
+}
+
 #ifdef __CUDACC__
 
 // cublas col-major processing accounted for by switching first two operands
