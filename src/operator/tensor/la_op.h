@@ -569,7 +569,6 @@ void LaOpGemmForward(const nnvm::NodeAttrs& attrs,
                      const std::vector<OpReqType>& req,
                      const std::vector<TBlob>& outputs) {
   using namespace mshadow;
-  std::cout << "hello!" << std::endl;
   CHECK_EQ(inputs.size(), inum);
   CHECK_EQ(outputs.size(), onum);
   const int axis(inputs.size() == 2 ? nnvm::get<LaMatrixMultParam>(attrs.parsed).axis
